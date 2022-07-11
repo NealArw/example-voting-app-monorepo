@@ -18,8 +18,6 @@ services:
     secrets:
       - pg_user
       - pg_password
-    volumes:
-      - share_db:/db
 
   worker:
     build: ./worker
@@ -52,9 +50,6 @@ services:
 configs:
   nginx-vote-conf:
     file: ./loadbalancer/vote.conf
-
-volumes:
-  share_db:
     
 # Postgres credentials
 secrets:
